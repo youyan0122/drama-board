@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>私人追剧看板</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h2>🍿 私人追剧看板</h2>
+        <p>输入电视剧名称，一键查询，流畅播放</p>
+    </header>
+    
+    <div class="search-box">
+        <input type="text" id="keyword" placeholder="输入电视剧名称（如：南部档案）" onkeydown="handleKeyDown(event)">
+        <button id="searchBtn" onclick="searchShow()">查询追剧</button>
+    </div>
+
+    <div class="info-card" id="infoCard">
+        <div class="info-header">
+            <div class="info-title" id="showTitle">电视剧名称</div>
+            <div class="info-status" id="showStatus">更新至--集</div>
+        </div>
+        <hr class="divider">
+        <div class="episode-list" id="epList"></div>
+    </div>
+
+    <div class="video-box" id="videoBox">
+        <iframe id="player" src="" allowfullscreen="true"></iframe>
+    </div>
+</div>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>
