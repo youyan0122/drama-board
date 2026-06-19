@@ -62,6 +62,7 @@ async function searchShow() {
         // 每次搜索时隐藏播放器，直至用户点击某集开始播放
         document.getElementById('videoBox').style.display = 'none';
         document.getElementById('player').src = '';
+        document.getElementById('directLink').style.display = 'none';
 
     } catch (error) {
         alert('数据加载失败，请检查网络');
@@ -76,18 +77,24 @@ async function searchShow() {
 function playVideo(videoUrl, activeBtn) {
     const videoBox = document.getElementById('videoBox');
     const player = document.getElementById('player');
-    
+    const directLink = document.getElementById('directLink');
+
     // 拼接解析接口进行播放
-    player.src = jxApi + encodeURIComponent(videoUrl);
+    const playUrl = jxApi + encodeURIComponent(videoUrl);
+    player.src = playUrl;
     videoBox.style.display = 'block';
-    
+
+    // 设置手机端直接播放链接
+    directLink.href = playUrl;
+    directLink.style.display = 'flex';
+
     // 高亮选中剧集
     const allBtns = document.querySelectorAll('.ep-btn');
     allBtns.forEach(btn => btn.classList.remove('active'));
     if (activeBtn) {
         activeBtn.classList.add('active');
     }
-    
+
     // 手机端自动平滑滚动到播放器位置
     setTimeout(() => {
         videoBox.scrollIntoView({ behavior: 'smooth', block: 'start' });

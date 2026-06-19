@@ -290,6 +290,31 @@ iframe {
     border: none;
 }
 
+/* 手机端直接播放链接 */
+.direct-link {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    padding: 14px 16px;
+    margin-top: 12px;
+    background: linear-gradient(135deg, #34c759, #30b350);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    font-weight: 600;
+    transition: var(--transition);
+    animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 12px rgba(52, 199, 89, 0.25);
+}
+
+.direct-link:active {
+    transform: scale(0.97);
+    background: #2a9e45;
+}
+
 /* ── 小屏手机适配 (320px ~ 358px) ── */
 @media (max-width: 359px) {
     body {
