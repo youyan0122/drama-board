@@ -1,7 +1,7 @@
 // 使用公开的跨域影视接口
 const apiServer = "https://cj.lziapi.com/api.php/provide/vod/?ac=detail&wd=";
 // 视频解析接口（无广告）
-const jxApi = "https://jx.lfeifei.cn/?url=";
+const jxApi = "https://api.pangujiexi.com/player.php?url=";
 // 备用解析接口: https://api.pangujiexi.com/player.php?url=
 
 // 回车键触发查询
